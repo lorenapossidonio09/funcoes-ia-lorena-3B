@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostalgia Pop MPB - Q&A</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Elementos 3D e Atmosfera MPB no Fundo -->
+    <div class="bg-scene">
+        <div class="shape-3d orb-gold"></div>
+        <div class="shape-3d orb-emerald"></div>
+        <div class="shape-3d vinyl-glow"></div>
+    </div>
+
+    <!-- Modal Estilo Glassmorphic em Fundo Preto -->
+    <main class="modal-wrapper">
+        <div class="modal-container">
+            <header class="modal-header">
+                <div class="badge-tag">DuckDuckGo & MPB Search</div>
+                <h1>Cultura Pop & Nostalgia</h1>
+                <p>Digite sua pergunta sobre novelas, músicas, programas de TV ou cultura pop antiga. O sistema consulta a internet via DuckDuckGo e traz o resultado diretamente aqui.</p>
+            </header>
+
+            <!-- Formulário de Pergunta -->
+            <form id="qaForm" class="qa-form">
+                <div class="input-wrapper">
+                    <input type="text" id="userQuestion" placeholder="Ex: Quem interpretou Odete Roitman na novela Vale Tudo?" required autocomplete="off">
+                    <button type="submit" id="sendBtn">
+                        <span>Pesquisar</span>
+                        <svg class="send-icon" viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Loader animado -->
+            <div id="loader" class="loader-container hidden">
+                <div class="vinyl-spinner"></div>
+                <p>Consultando DuckDuckGo e fontes da web...</p>
+            </div>
+
+            <!-- Card de Resposta Integrada -->
+            <section id="responseCard" class="response-card hidden">
+                <div class="response-header">
+                    <span class="response-badge">Resultado Encontrado na Web</span>
+                </div>
+
+                <!-- Resposta/Resumo principal -->
+                <div id="answerText" class="answer-content"></div>
+
+                <!-- Tópicos/Notícias sugeridos retornados da busca -->
+                <div id="relatedTopics" class="related-topics hidden">
+                    <h3>Resultados e Notícias Relacionadas:</h3>
+                    <ul id="topicsList"></ul>
+                </div>
+
+                <!-- Link direto de referência da fonte principal -->
+                <div id="sourcesContainer" class="sources-container hidden">
+                    <span class="source-title">Fonte da Resposta:</span>
+                    <a id="sourceLink" href="#" target="_blank" rel="noopener noreferrer" class="news-link">
+                        🌐 Acessar matéria original
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Importação do ficheiro JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
